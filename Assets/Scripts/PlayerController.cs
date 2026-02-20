@@ -32,11 +32,11 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
         rb.AddForce(movement * speed);
 
-        if (enemigo.transform.position.x > player.position.x)
+        if (enemigo.transform.position.x - player.position.x < 1 && enemigo.transform.position.z - player.position.z < 1)
         {
             Debug.Log("Esta lejos");
         }
-        else if (enemigo.transform.position.x < player.position.x)
+        else if (enemigo.transform.position.x - player.position.x > 1 && enemigo.transform.position.z - player.position.z > 1)
         {
             Debug.Log("Esta cerca");
         }
